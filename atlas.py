@@ -206,7 +206,7 @@ class atlas(object):
 			Process(
 				url,method,data,kwargs
 				).check()
-		else:plus('return HTTP code \"%s\", the payload isn\'t blocked by some kind of WAF/IDS/IPS..'%code,1)
+		else:plus('return HTTP code \"%s\", the payload not blocked by some kind of WAF/IDS/IPS..'%code,1)
 		plus2('trying with sqlmap tampers...')
 		kwargs['var'] = 1
 		if dbms:
