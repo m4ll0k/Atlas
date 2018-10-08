@@ -51,7 +51,7 @@ class Request(object):
 		# -- urlopen -- #
 		try:
 			resp = urllib2.urlopen(req)
-		except urllib2.HTTPError,e:
+		except urllib2.HTTPError as e:
 			resp = e 
 		return Resp(resp)
 
