@@ -54,7 +54,7 @@ class Process(Request):
 					else:
 						url = self.url
 						data = param
-				except AttributeError,e:
+				except AttributeError as e:
 					url = self.url
 					data = param
 				# -- Oops! --
@@ -94,7 +94,7 @@ class Process(Request):
 					try:
 						if Parse(params).host in params:url=params;data=self.data
 						else:url = self.url;data=params
-					except AttributeError,e:
+					except AttributeError as e:
 						url = self.url
 						data = params
 					resp = self.send(url,self.method,data=data)
@@ -167,7 +167,7 @@ class atlas(object):
 		        ]
 		try:
 			opts,args = getopt.getopt(sys.argv[1:],s_cmd,l_cmd)
-		except getopt.GetoptError,e:
+		except getopt.GetoptError as e:
 			self.usage(True)
 		for i in range(len(opts)):
 			if(opts[i][0] in('-h','--help')):self.usage(1)
@@ -263,5 +263,5 @@ def tamper_importer(dbms):
 
 try:
 	atlas().main()
-except KeyboardInterrupt,e:
+except KeyboardInterrupt as e:
 	warn('User quit!!',1)
