@@ -22,6 +22,10 @@ class Request(object):
 		# -- process -- # 
 		if method:method = method.upper()
 		if data is None: data = {}
+		# -- disable ssl check -- *
+		ctx = ssl.create_default_context()                                                                      
+		ctx.check_hostname = False                                                                              
+		ctx.verify_mode = ssl.CERT_NONE
 		# -- add headers -- #
 		headers = {}
 		headers['User-Agent'] = agent
@@ -29,7 +33,7 @@ class Request(object):
 		# -- socket timeout -- #
 		if timeout:socket.setdefaulttimeout(timeout)
 		# -- handled http and https -- #
-		handlers = [urllib2.HTTPHandler(),urllib2.HTTPSHandler()]
+		handlers = [urllib2.HTTPHandler(),urllib2.HTTPSHandler(context=ctx)]
 		# -- process redirect -- #
 		if redirect is False:handlers.append(NoRedirectHandler)
 		# -- process proxies -- # 
