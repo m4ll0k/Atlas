@@ -19,7 +19,7 @@ def general_randomcase(payload):
 		for match in re.finditer(r'\b[A-Za-z_]+\b',_payload):
 			word = match.group()
 			if word.upper() in statements:
-				m_word = word[random.randint(0,len(word))]
+				m_word = random.choice(word)
 				if m_word: 
 					_payload = _payload.replace(m_word,m_word.lower())
 	return _payload
