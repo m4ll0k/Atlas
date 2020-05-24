@@ -38,7 +38,7 @@ $ python atlas.py --url http://site.com/index/id/ -m POST -D 'test=%%10%%' --pay
 
 headers:
 ```
-$ python atlas.py --url http://site.com/index/id/ -H 'User-Agent: mozilla/5.0%%inject%%' --payload="-1234 AND 4321=4321-- AAAA" --random-agent -v
+$ python atlas.py --url http://site.com/index/id/ -H 'User-Agent: mozilla/5.0%%inject%%' -H 'X-header: test' --payload="-1234 AND 4321=4321-- AAAA" --random-agent -v
 ```
 
 
