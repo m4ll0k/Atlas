@@ -1,4 +1,4 @@
-Atlas - Quick SQLMap Tamper Suggester (beta v.)
+Atlas - Quick SQLMap Tamper Suggester v1.0
 ---
 
 __Atlas__ is an open source tool that can suggest sqlmap tampers to bypass WAF/IDS/IPS, the tool is based on returned status code.
