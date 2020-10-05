@@ -74,3 +74,6 @@ At this point:
 ```
 $ python sqlmap.py -u 'http://site.com/index.php?id=Price_ASC' --dbs --random-agent -v 3 --tamper=versionedkeywords,...
 ```
+
+#### The new Update get will soon stay updated
+$ BurpSuite
